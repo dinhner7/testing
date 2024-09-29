@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".Tab2">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/textView3"
         style="@style/titleStyle"
@@ -17,7 +17,8 @@
         android:layout_marginTop="20dp"
         android:text="Choices"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/ButtonHeader"
@@ -27,7 +28,8 @@
         android:inputType="text"
         android:text="Radio Button Section"
         tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="73dp" />
+        tools:layout_editor_absoluteY="73dp"
+        tools:ignore="HardcodedText,MissingConstraints" />
 
     <RadioGroup
         android:id="@+id/radioGroup3"
@@ -42,25 +44,50 @@
             android:id="@+id/Option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 1" />
-
+            android:text="@string/radio4" />
         <RadioButton
             android:id="@+id/Option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 2" />
+            android:text="@string/radio2" />
 
         <RadioButton
             android:id="@+id/Option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 3" />
+            android:text="@string/radio3" />
 
         <RadioButton
             android:id="@+id/Option4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Option 4" />
+            android:text="@string/radio4" />
     </RadioGroup>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/select"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup3"
+        tools:layout_editor_absoluteX="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        >
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            tools:ignore="LabelFor"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

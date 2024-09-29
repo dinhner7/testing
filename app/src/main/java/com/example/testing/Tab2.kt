@@ -21,12 +21,19 @@ class Tab2 : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    val dropdown_vals = arrayOf<String>("Option1", "Option2", "Option3")
+    // create autocomplete text view
+
+//    ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
+
     }
 
     override fun onCreateView(
