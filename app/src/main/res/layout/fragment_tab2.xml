@@ -19,12 +19,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/ButtonHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Radio Button Section"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="73dp" />
+
     <RadioGroup
         android:id="@+id/radioGroup3"
-        android:layout_width="337dp"
-        android:layout_height="316dp"
+        android:layout_width="334dp"
+        android:layout_height="191dp"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="136dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -32,25 +42,25 @@
             android:id="@+id/Option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Option 1" />
 
         <RadioButton
             android:id="@+id/Option2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Option 2" />
 
         <RadioButton
             android:id="@+id/Option3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Option 3" />
 
         <RadioButton
             android:id="@+id/Option4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Option 4" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
