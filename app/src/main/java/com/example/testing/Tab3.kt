@@ -1,25 +1,26 @@
 package com.example.testing
 
 import android.os.Bundle
-import android.text.SpannableString
-import android.text.style.StrikethroughSpan
-import android.text.style.StyleSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.get
 
 /**
  * A simple [Fragment] subclass.
+ * Here are the website links used as reference throughout the process of learning how to code
+ * this tab:
+ * --- General Guides ---
+ * https://guides.codepath.com/android/Basic-Todo-App-Tutorial
+ * https://www.youtube.com/watch?v=i9mkAoZ8FNk
+ * --- Initializing Vars ---
+ * https://www.tutorialspoint.com/how-to-use-arrayadapter-in-android-to-create-a-simple-listview-in-kotlin
+ * https://www.geeksforgeeks.org/arrayadapter-in-android-with-example/
  */
 class Tab3 : Fragment() {
     private var taskList: ArrayList<String> = ArrayList()
