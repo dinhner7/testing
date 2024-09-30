@@ -13,22 +13,23 @@
         android:id="@+id/textView3"
         style="@style/titleStyle"
         android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="20dp"
         android:text="Choices"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="HardcodedText" />
 
-    <EditText
+    <TextView
+        style="@style/TextAppearance.Material3.HeadlineSmall"
+        android:gravity="center"
         android:id="@+id/ButtonHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="text"
         android:text="Radio Button Section"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="73dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <RadioGroup
@@ -44,7 +45,7 @@
             android:id="@+id/Option1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/radio4" />
+            android:text="@string/radio1" />
         <RadioButton
             android:id="@+id/Option2"
             android:layout_width="match_parent"
@@ -64,27 +65,14 @@
             android:text="@string/radio4" />
     </RadioGroup>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+    <Spinner
+        android:id="@+id/Dropdown"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="@string/select"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup3"
-        tools:layout_editor_absoluteX="16dp"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup3"
         >
 
-        <AutoCompleteTextView
-            android:id="@+id/autoCompleteTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="none"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
-            tools:ignore="LabelFor"
-            />
-
-    </com.google.android.material.textfield.TextInputLayout>
+    </Spinner>
 
 
 
