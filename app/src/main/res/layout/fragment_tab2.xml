@@ -74,8 +74,18 @@
 
     </Spinner>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Print Info"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="412dp"
 
-
+        app:layout_constraintTop_toBottomOf="@id/Dropdown"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="HardcodedText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

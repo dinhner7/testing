@@ -1,12 +1,18 @@
 package com.example.testing
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Spinner
+import androidx.compose.runtime.Composable
+import org.w3c.dom.Text
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,6 +40,7 @@ class Tab2 : Fragment() {
         }
     }
 
+    /* if view is non-null, we can populate spinner button etc */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,15 +49,37 @@ class Tab2 : Fragment() {
         val dropdown_vals = mutableListOf("Option 1", "Option 2", "Option 3")
         val spinner = view.findViewById<Spinner>(R.id.Dropdown)
 
-        // should allow the autocomplete option for dropdown menu
+        // spinner array adapter
         val adapter = ArrayAdapter.createFromResource(
             requireContext(),
             R.array.dropdown_options,
             android.R.layout.simple_spinner_item
-        ).also{ adapter ->
+        ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.setAdapter(adapter)
         }
+        val button = view.findViewById<Button>(R.id.button)
+
+        button.setOnClickListener {
+            // there has to be a better way to get the selected button\
+
+            val radio_group = view.findViewById<RadioGroup>(R.id.radioGroup3)
+            val radio_button_ID = radio_group.checkedRadioButtonId
+            val radio_button_obj = radio_group.findViewById<RadioButton>(radio_button_ID)
+            val idx_of_button = radio_group.indexOfChild(radio_button_obj)
+
+            // dropdown selection
+            val dropdown_selection = spinner.selectedItem.toString()
+
+            val string_to_display = "You selected Option: " + idx_of_button + " for the radio button, " +
+                    "and " + dropdown_selection + " for the dropdown menu."
+
+            val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+            builder.setMessage(string_to_display).setTitle("Dialog")
+            val dialog = builder.create()
+            dialog.show()
+        }
+
         // Inflate the layout for this fragment
         return view
     }
