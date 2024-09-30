@@ -8,6 +8,8 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 
+//Source for fragment and tablayout setup: https://d2dreamdevelopers.blogspot.com/2021/04/tab-layout-with-viewpager-using-fragment.html#google_vignette
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
