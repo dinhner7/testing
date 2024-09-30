@@ -66,13 +66,21 @@ class Tab2 : Fragment() {
             val radio_group = view.findViewById<RadioGroup>(R.id.radioGroup3)
             val radio_button_ID = radio_group.checkedRadioButtonId
             val radio_button_obj = radio_group.findViewById<RadioButton>(radio_button_ID)
-            val idx_of_button = radio_group.indexOfChild(radio_button_obj)
+            val idx_of_button = radio_group.indexOfChild(radio_button_obj) + 1
 
             // dropdown selection
             val dropdown_selection = spinner.selectedItem.toString()
 
-            val string_to_display = "You selected Option: " + idx_of_button + " for the radio button, " +
-                    "and " + dropdown_selection + " for the dropdown menu."
+            val string_to_display = StringBuilder("You ")
+            if (idx_of_button > 0) {
+                string_to_display.append(" selected Option: " + idx_of_button + " for the radio button, " +
+                        "and " + dropdown_selection + " for the dropdown menu.")
+            } else {
+                string_to_display.append(
+                    " did not select a radio button option, but selected "
+                            + dropdown_selection + " for the dropdown menu."
+                )
+            }
 
             val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
             builder.setMessage(string_to_display).setTitle("Dialog")
